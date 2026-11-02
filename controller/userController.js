@@ -18,11 +18,6 @@ export const create = async(req,res) =>{
             status: req.body.status,
         });
     
-        // Check if there is a file in the request
-        if (req.file) {
-          // Assign the file path or URL to the 'img' field
-          userData.img = path.basename(req.file.path); // Adjust this based on your server configuration
-        }
     
         // Save the user data
         const saveData = await userData.save();
